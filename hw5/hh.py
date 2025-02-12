@@ -3,9 +3,10 @@ string1 = "www.my_site.com#about"
 print(string1.replace("#", "/"))
 
 # 2 Напишите программу, которая добавляет ‘ing’ к словам
+
+
 def adding_ing_function(a):
     return a + 'ing'
-
 
 
 print(adding_ing_function('random'))
