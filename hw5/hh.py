@@ -7,6 +7,7 @@ def adding_ing_function(a):
     return a + 'ing'
 
 
+
 print(adding_ing_function('random'))
 print(adding_ing_function('run'))
 
@@ -41,7 +42,7 @@ print(lst)
 # 7 "I love arrays they are my favorite" => ["I", "love", "arrays", "they", "are", "my", "favorite"]
 string7 = "I love arrays they are my favorite"
 lstt = string7.split()
-print (lstt)
+print(lstt)
 # 8 Дан список: [Ivan, Ivanou], и 2 строки: Minsk, Belarus
 # Напечатайте текст: “Привет, Ivan Ivanou! Добро пожаловать в Minsk Belarus”
 arr8 = ["Ivan", "Ivanou"]
@@ -55,7 +56,8 @@ arr9_string = " ".join(arr9)
 print(arr9_string)
 # 10 Создайте список из 10 элементов, вставьте на 3-ю позицию новое значение,
 # удалите элемент из списка под индексом 6
-arr10 = ["lemon", "apple", "pear", "watermelon", "plum", "orange", "tangerine", "mango", "peach", "coconut"]
+arr10 = ["lemon", "apple", "pear", "watermelon",
+         "plum", "orange", "tangerine", "mango", "peach", "coconut"]
 arr10.insert(2, "papaya")
 del arr10[6]
 print(arr10)
