@@ -30,29 +30,33 @@ print(result)
 # 3 Time converter
 time_24 = '23:15'
 hours, minutes = time_24.split(':')
-hours = int(hours)
-minutes = int(minutes)
+hours_int = int(hours)
+minutes_int = int(minutes)
 
-if hours < 12:
+if hours_int < 12:
     period = 'a.m.'
-    if hours == 0:
-        hours = 12
-elif hours > 12:
+    if hours_int == 0:
+        hours_int = 12
+elif hours_int > 12:
     period = 'p.m.'
-    hours -= 12
+    hours_int -= 12
 else:
     period = 'p.m.'
-    hours == 12
+    hours_int == 12
 
-if minutes < 10:
-    minutes_str = '0' + str(minutes)
+if minutes_int < 10:
+    minutes_str = '0' + str(minutes_int)
 else:
-    minutes_str = str(minutes)
+    minutes_str = str(minutes_int)
 
 if hours < 10:
-    time_12 = str(hours) + ':' + minutes_str + ' ' + period
+    time_12 = str(hours_int) + ':' + minutes_str + ' ' + period
 else:
-    time_12 = str(hours) + ':' + minutes_str + ' ' + period
+    time_12 = str(hours_int) + ':' + minutes_str + ' ' + period
 
 print(time_12)
+
+
+
+
 
