@@ -49,14 +49,9 @@ if minutes_int < 10:
 else:
     minutes_str = str(minutes_int)
 
-if hours < 10:
+if hours_int < 10:
     time_12 = str(hours_int) + ':' + minutes_str + ' ' + period
 else:
     time_12 = str(hours_int) + ':' + minutes_str + ' ' + period
 
 print(time_12)
-
-
-
-
-
