@@ -1,7 +1,6 @@
 # 1 Time
 n = int(input("Enter the number that displays on motorbike: "))
 number_of_hours = n//60
-# number_of_minutes = n - (number_of_hours*60)
 number_of_minutes = n % 60
 if number_of_hours < 10:
     if number_of_minutes < 10:
@@ -37,12 +36,12 @@ if hours_int < 12:
     period = 'a.m.'
     if hours_int == 0:
         hours_int = 12
-elif hours_int > 12:
-    period = 'p.m.'
-    hours_int -= 12
 else:
     period = 'p.m.'
-    hours_int == 12
+    if hours_int > 12:
+        hours_int -= 12
+    else:
+        hours_int == 12
 
 if minutes_int < 10:
     minutes_str = '0' + str(minutes_int)
