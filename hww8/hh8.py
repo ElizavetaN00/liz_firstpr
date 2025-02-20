@@ -22,12 +22,11 @@ while bulls != 4:
     cows = 0
     index = 0
 
-    for x in guess_number:
-        if x == comp_number[index]:
+    for x in range(len(guess_number)):
+        if guess_number[x] == comp_number[x]:
             bulls += 1
-        elif x in comp_number:
+        elif guess_number[x] in comp_number:
             cows += 1
-        index += 1
     print(f"{bulls} bull(s), {cows} cow(s). Try again!")
 
     if bulls == 4:
@@ -38,17 +37,10 @@ while bulls != 4:
 n = 10
 
 for i in range(n):
-    spaces = ' ' * (n - i - 1)
-    stars = '*' * (2 * i + 1)
-    print(spaces + stars)
+    print(' ' * (n - i - 1) + '*' * (2 * i + 1))
 
 # Статуи
-st1 = 6
-st2 = 2
-st3 = 3
-st4 = 8
-
-statues = [st1, st2, st3, st4]
+statues = [6, 2, 3, 8]
 min_statue = min(statues)
 max_statue = max(statues)
 amount_of_needed_statues = 0
