@@ -1,5 +1,5 @@
 def solution(text: str) -> str:
-    modified_list = []
+    modified_list: list[str] = []
     for i in text:
         if i == "#":
             if modified_list:
@@ -67,4 +67,3 @@ assert solution3("aaabbceedd") == "a3b2ce2d2"
 assert solution3("abcde") == "abcde"
 assert solution3("aaabbdefffff") == "a3b2def5"
 assert solution3("") == ""
-
