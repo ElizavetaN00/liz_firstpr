@@ -11,6 +11,7 @@ def validate_arguments(func):
 def summ(a, b):
     return a + b
 
+
 print("Summ is", summ(8, 9))
 
 
@@ -32,6 +33,7 @@ def summ(a, b):
 @validate_number_result
 def text(name):
     return f"Good evening, {name}!"
+
 
 print(summ(7,1))
 print(text("Ivan"))
@@ -76,6 +78,7 @@ print(add_float("0.1", 0.2, "0.4"))
 
 def cache(func):
     cached_result_dictionary = {}
+
     def wrapper(*args):
         if args in cached_result_dictionary:
             print(f"Result for {args} is from cache")
