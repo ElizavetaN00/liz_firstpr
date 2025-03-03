@@ -19,14 +19,15 @@ def validate_number_result(func):
     def wrapper(*args):
         result = func(*args)
         if not isinstance(result, (int, float)):
-            print(f"Error. Result of function {func.__name__} is not a number. Got {result}")
+            print(f"Error. Result of function {func.__name__} "
+                  f"is not a number. Got {result}")
             return None
         return result
     return wrapper
 
 
 @validate_number_result
-def summ(a, b):
+def summa(a, b):
     return a + b
 
 
@@ -35,7 +36,7 @@ def text(name):
     return f"Good evening, {name}!"
 
 
-print(summ(7,1))
+print(summa(7, 1))
 print(text("Ivan"))
 
 
