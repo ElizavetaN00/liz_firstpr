@@ -47,8 +47,9 @@ bank.register_client(client_id=client_id, name="Siarhei")
 print(bank.clients)
 bank.open_deposit_account(client_id=client_id, start_balance=1000, years=1)
 print(bank.deposits)
-# assert bank.calc_interest_rate(client_id = client_id) == 1104.71, "<Error message>"
-print(f"Client: {bank.clients["0000001"]}, Final balance: {bank.calc_deposit_interest_rate(client_id="0000001")} rub")
+assert bank.calc_interest_rate(client_id = client_id) == 1104.71 #  "<Error message>"
+print(f"Client: {bank.clients[client_id]}, Final balance: "
+      f"{bank.calc_deposit_interest_rate(client_id=client_id)} rub")
 bank.close_deposit(client_id=client_id)
 print(bank.deposits)
 
@@ -129,8 +130,8 @@ class Reader:
         book.return_book(self)
 
 
-book = Book(book_name = "The Hobbit", author = "J.R.R. Tolkien",
-            num_pages = 400, isbn = "0006754023")
+book = Book(book_name="The Hobbit", author="J.R.R. Tolkien",
+            num_pages=400, isbn="0006754023")
 vasya = Reader("Vasya")
 petya = Reader("Petya")
 
