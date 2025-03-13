@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import json
 import yaml
 
+
 # 1
 def create_text_file(name):
 
@@ -42,7 +43,6 @@ def students_data(students):
 
     for student in students:
         i = student.split(", ")
-        name = i[0].split(": ")[1]
         group = i[1].split(": ")[1]
         marks = list(map(int, i[2].split(": ")[1].split(",")))
 
@@ -89,6 +89,7 @@ try:
 except FileNotFoundError as error:
     print(error)
 
+
 # 2 "dd.mm.yyyy"
 def find_dates(name):
 
@@ -123,6 +124,7 @@ for i in passwords:
     else:
         print(f'Password "{i}" is not valid')
 
+
 # 4
 def correct_text(text):
     pattern = r'(\w+)\s+\1'
@@ -136,6 +138,7 @@ text = ('Довольно распространённая ошибка ошиб
 
 no_repeats_text = correct_text(text)
 print(f'Fixed text with no repeats: {no_repeats_text}')
+
 
 # 5 XML
 def total_cost_calculation(xml_file):
@@ -154,6 +157,7 @@ def total_cost_calculation(xml_file):
 xml_file = 'Goods.xml'
 total_cost = total_cost_calculation(xml_file)
 print(f"Total cost of the goods is: {total_cost}")
+
 
 # 6 JSON
 def find_club_with_most_wins(json_file):
@@ -178,6 +182,7 @@ if club_with_most_wins:
           f"{club_with_most_wins['country']}")
 else:
     print("No Football Clubs were found")
+
 
 # 7 YAML
 def display_books(filename):
