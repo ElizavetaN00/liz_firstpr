@@ -1,0 +1,17 @@
+<goods>
+    <good>
+        <name>Table</name>
+        <price>8800</price>
+        <quantity>8</quantity>
+    </good>
+    <good>
+        <name>Desk</name>
+        <price>9900</price>
+        <quantity>9</quantity>
+    </good>
+    <good>
+        <name>Chair</name>
+        <price>5500</price>
+        <quantity>5</quantity>
+    </good>
+</goods>

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Real",
+        "country": "Spain",
+        "wins": 302
+    },
+    {
+        "name": "Barcelona",
+        "country": "Spain",
+        "wins": 211
+    },
+    {
+        "name": "Manchester United",
+        "country": "England",
+        "wins": 161
+    },
+    {
+        "name": "Juventus",
+        "country": "Italy",
+        "wins": 157
+    },
+    {
+        "name": "Arsenal",
+        "country": "England",
+        "wins": 113
+    }
+]
