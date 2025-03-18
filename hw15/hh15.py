@@ -5,7 +5,8 @@ from dateutil.relativedelta import relativedelta
 import logging
 import logging.handlers as handlers
 
-#1
+
+# 1
 class OrderStatus(Enum):
     PENDING = "Заказ ожидает обработки"
     IN_PROGRESS = "Заказ готовится"
@@ -13,10 +14,12 @@ class OrderStatus(Enum):
     COMPLETED = "Заказ выдан"
     CANCELLED = "Заказ отменён"
 
+
 class Order:
     def __init__(self, order_id, status=OrderStatus.PENDING):
         self.order_id = order_id
         self.status = status
+
 
     def update_status(self, new_status):
         if isinstance(new_status, OrderStatus):
@@ -24,8 +27,10 @@ class Order:
         else:
             raise ValueError("Неверный статус")
 
+
     def display_status(self):
         print(f"Order status {self.order_id}: {self.status.value}")
+
 
 order = Order('127')
 order.display_status()
@@ -70,6 +75,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
+
 def log_user_action(action: str, level: str = "INFO"):
     if level.upper() == "INFO":
         logging.info(action)
@@ -79,6 +85,7 @@ def log_user_action(action: str, level: str = "INFO"):
         logging.warning(action)
     else:
         logging.debug(action)
+
 
 log_user_action("User Log in", "INFO")
 log_user_action("Incorrect password during log in", "ERROR")
@@ -130,6 +137,7 @@ console_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
+
 def log_user_action(action: str, level: str = "INFO"):
     if level.upper() == "INFO":
         logger.info(action)
@@ -139,6 +147,7 @@ def log_user_action(action: str, level: str = "INFO"):
         logger.warning(action)
     else:
         logger.debug(action)
+
 
 log_user_action("User Log in", "INFO")
 log_user_action("Incorrect password during log in", "ERROR")
