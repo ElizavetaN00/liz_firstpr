@@ -1,4 +1,3 @@
-# 3
 def summ_to_number(number):
     total_sum = 0
 

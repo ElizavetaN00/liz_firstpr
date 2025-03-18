@@ -1,4 +1,3 @@
-# 2
 def square_from_digit():
     digit1 = float(input("Enter digit: "))
     square = digit1 ** 2
@@ -11,6 +10,7 @@ def even_odd_digit():
         print(f"Digit {digit2} is even")
     else:
         print(f"Digit {digit2} is odd")
+
 
 print(square_from_digit())
 even_odd_digit()

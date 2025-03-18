@@ -1,4 +1,3 @@
-# 1
 str1 = "Never regret anything that made you smile"
 first_symbol = str1[0]
 last_symbol = str1[-1]
