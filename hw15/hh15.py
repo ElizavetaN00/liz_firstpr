@@ -20,13 +20,11 @@ class Order:
         self.order_id = order_id
         self.status = status
 
-
     def update_status(self, new_status):
         if isinstance(new_status, OrderStatus):
             self.status = new_status
         else:
             raise ValueError("Неверный статус")
-
 
     def display_status(self):
         print(f"Order status {self.order_id}: {self.status.value}")
@@ -50,7 +48,7 @@ date2 = input('Enter second date in format "YYYY-MM-DD": ')
 dt1 = parse(date1)
 dt2 = parse(date2)
 diff = relativedelta(dt2, dt1)
-difference_in_days = (dt2 -dt1).days
+difference_in_days = (dt2 - dt1).days
 
 print(f"Difference between {dt1.date()} and {dt2.date()} is "
       f"{abs(difference_in_days)} day(s)")
@@ -104,6 +102,7 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s '
 logHandler.setFormatter(formatter)
 logger.addHandler(logHandler)
 
+
 def log_user_action(action: str, level: str = "INFO"):
     if level.upper() == "INFO":
         logger.info(action)
@@ -113,6 +112,7 @@ def log_user_action(action: str, level: str = "INFO"):
         logger.warning(action)
     else:
         logger.debug(action)
+
 
 log_user_action("User  Log in", "INFO")
 log_user_action("Incorrect password during log in", "ERROR")
