@@ -103,7 +103,7 @@ logHandler.setFormatter(formatter)
 logger.addHandler(logHandler)
 
 
-def log_user_action(action: str, level: str = "INFO"):
+def log_user_action1(action: str, level: str = "INFO"):
     if level.upper() == "INFO":
         logger.info(action)
     elif level.upper() == "ERROR":
@@ -114,9 +114,9 @@ def log_user_action(action: str, level: str = "INFO"):
         logger.debug(action)
 
 
-log_user_action("User  Log in", "INFO")
-log_user_action("Incorrect password during log in", "ERROR")
-log_user_action("User  is not in DB", "WARNING")
+log_user_action1("User  Log in", "INFO")
+log_user_action1("Incorrect password during log in", "ERROR")
+log_user_action1("User  is not in DB", "WARNING")
 
 # 6
 logger = logging.getLogger('My Logger')
@@ -138,7 +138,7 @@ logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
 
-def log_user_action(action: str, level: str = "INFO"):
+def log_user_action2(action: str, level: str = "INFO"):
     if level.upper() == "INFO":
         logger.info(action)
     elif level.upper() == "ERROR":
@@ -149,6 +149,6 @@ def log_user_action(action: str, level: str = "INFO"):
         logger.debug(action)
 
 
-log_user_action("User Log in", "INFO")
-log_user_action("Incorrect password during log in", "ERROR")
-log_user_action("User is not in DB", "WARNING")
+log_user_action2("User Log in", "INFO")
+log_user_action2("Incorrect password during log in", "ERROR")
+log_user_action2("User is not in DB", "WARNING")
