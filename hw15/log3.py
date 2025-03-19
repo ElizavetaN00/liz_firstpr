@@ -1,5 +1,4 @@
 import logging
-import logging.handlers as handlers
 
 
 logger = logging.getLogger('My Logger')
