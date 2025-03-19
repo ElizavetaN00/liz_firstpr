@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.log
+<<<<<<< HEAD
+=======
+
+>>>>>>> 48f9dd98371a97751b32ddd38f800ab4f800759f
 # Environments
 venv/
 
