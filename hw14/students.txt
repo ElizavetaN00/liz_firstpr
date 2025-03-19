@@ -1,0 +1,8 @@
+Name: Jane Corden, Group: Group A, Marks: 4,7,8
+Name: Kate Blake, Group: Group B, Marks: 9,9,8
+Name: Oliver Whales, Group: Group B, Marks: 4,8,9
+Name: Elijah Knight, Group: Group A, Marks: 4,5,9
+
+Total number of students: 4
+Group: Group A, number of students: 2, average grade: 6.166666666666666
+Group: Group B, number of students: 2, average grade: 7.833333333333333
