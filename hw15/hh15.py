@@ -149,6 +149,6 @@ def log_user_action2(action: str, level: str = "INFO"):
         logger.debug(action)
 
 
-log_user_action2("User Log in ", "INFO")
+log_user_action2("User Log in", "INFO")
 log_user_action2("Incorrect password during log in", "ERROR")
 log_user_action2("User is not in DB", "WARNING")
