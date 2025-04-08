@@ -6,10 +6,6 @@ from hw12.hh12 import Bank, Book, Reader
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, project_root)
 
-# print("Bank imported:", Bank)
-# print("Book imported:", Book)
-# print("Reader imported:", Reader)
-
 
 class TestBank(unittest.TestCase):
     def setUp(self):
