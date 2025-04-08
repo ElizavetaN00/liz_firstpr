@@ -1,15 +1,15 @@
 import unittest
 import sys
 import os
+from hw12.hh12 import Bank, Book, Reader
 
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
 
-from hw12.hh12 import Bank, Book, Reader
-
 # print("Bank imported:", Bank)
 # print("Book imported:", Book)
 # print("Reader imported:", Reader)
+
 
 class TestBank(unittest.TestCase):
     def setUp(self):
@@ -137,6 +137,7 @@ class TestBook(unittest.TestCase):
     def test_return_book_not_borrowed(self):
         self.readerV.return_book(self.book)
         self.assertFalse(self.book.is_borrowed)
+
 
 if __name__ == '__main__':
     unittest.main()
