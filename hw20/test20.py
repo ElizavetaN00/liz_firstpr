@@ -1,10 +1,15 @@
 import unittest
 import sys
 import os
-from hw12.hh12 import Bank, Book, Reader
+from typing import Any
 
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(project_root)
+sys.path.insert(0, project_root)
+
+try:
+    from hw12.hh12 import Bank, Book, Reader
+except ImportError:
+    from hh12 import Bank, Book, Reader
 
 # print("Bank imported:", Bank)
 # print("Book imported:", Book)
