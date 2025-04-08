@@ -8,7 +8,7 @@ sys.path.insert(0, project_root)
 
 from hw12.hh12 import Bank, Book, Reader
 
-# print("Bank imported:", Bank)
+# print("Bank imported:", Bank) 
 # print("Book imported:", Book)
 # print("Reader imported:", Reader)
 
