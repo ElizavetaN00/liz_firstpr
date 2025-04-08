@@ -40,18 +40,18 @@ class Bank:
         del self.deposits[client_id]
 
 
-client_id = "0000001"
-
-bank = Bank()
-bank.register_client(client_id=client_id, name="Siarhei")
-print(bank.clients)
-bank.open_deposit_account(client_id=client_id, start_balance=1000, years=1)
-print(bank.deposits)
-# assert bank.calc_interest_rate(client_id=client_id) == 1104.71  # "<Error message>"
-print(f"Client: {bank.clients[client_id]}, Final balance: "
-      f"{bank.calc_deposit_interest_rate(client_id=client_id)} rub")
-bank.close_deposit(client_id=client_id)
-print(bank.deposits)
+# client_id = "0000001"
+#
+# bank = Bank()
+# bank.register_client(client_id=client_id, name="Siarhei")
+# print(bank.clients)
+# bank.open_deposit_account(client_id=client_id, start_balance=1000, years=1)
+# print(bank.deposits)
+# # assert bank.calc_interest_rate(client_id=client_id) == 1104.71  # "<Error message>"
+# print(f"Client: {bank.clients[client_id]}, Final balance: "
+#       f"{bank.calc_deposit_interest_rate(client_id=client_id)} rub")
+# bank.close_deposit(client_id=client_id)
+# print(bank.deposits)
 
 
 class Book:
@@ -67,9 +67,9 @@ class Book:
 
     def reserve(self, reader):
         if self.is_borrowed:
-            print(f"Book '{self.book_name}' is borrowed. Unable to reserve")
+            raise Exception(f"Book '{self.book_name}' is borrowed. Unable to reserve")
         elif self.is_reserved:
-            print(f"Book '{self.book_name}' is reserved. Unable to reserve")
+            raise Exception(f"Book '{self.book_name}' is reserved. Unable to reserve")
         else:
             self.is_reserved = True
             self.reserved_by = reader
@@ -77,9 +77,9 @@ class Book:
 
     def cancel_reserve(self, reader):
         if not self.is_reserved:
-            print(f"Book '{self.book_name}' is not reserved")
+            raise Exception(f"Book '{self.book_name}' is not reserved")
         elif self.reserved_by != reader:
-            print(f"Book '{self.book_name}' is reserved by another reader")
+            raise Exception(f"Book '{self.book_name}' is reserved by another reader")
         else:
             self.is_reserved = False
             self.reserved_by = None
@@ -87,11 +87,11 @@ class Book:
 
     def get_book(self, reader):
         if self.is_borrowed:
-            print(f"Book '{self.book_name}' is borrowed. Unable to get")
+            raise Exception(f"Book '{self.book_name}' is borrowed. Unable to get")
         elif not self.is_reserved:
-            print(f"Book '{self.book_name}' is not reserved. Unable to get")
+            raise Exception(f"Book '{self.book_name}' is not reserved. Unable to get")
         elif self.reserved_by != reader:
-            print(f"Book '{self.book_name}' is reserved by another reader. "
+            raise Exception(f"Book '{self.book_name}' is reserved by another reader. "
                   f"Unable to get")
         else:
             self.is_borrowed = True
@@ -130,18 +130,18 @@ class Reader:
         book.return_book(self)
 
 
-book = Book(book_name="The Hobbit", author="J.R.R. Tolkien",
-            num_pages=400, isbn="0006754023")
-vasya = Reader("Vasya")
-petya = Reader("Petya")
-
-vasya.reserve_book(book)
-petya.reserve_book(book)
-vasya.cancel_reserve(book)
-
-petya.reserve_book(book)
-vasya.get_book(book)
-petya.get_book(book)
-vasya.return_book(book)
-petya.return_book(book)
-vasya.get_book(book)
+# book = Book(book_name="The Hobbit", author="J.R.R. Tolkien",
+#             num_pages=400, isbn="0006754023")
+# vasya = Reader("Vasya")
+# petya = Reader("Petya")
+#
+# vasya.reserve_book(book)
+# petya.reserve_book(book)
+# vasya.cancel_reserve(book)
+#
+# petya.reserve_book(book)
+# vasya.get_book(book)
+# petya.get_book(book)
+# vasya.return_book(book)
+# petya.return_book(book)
+# vasya.get_book(book)
