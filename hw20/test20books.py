@@ -1,7 +1,7 @@
 import unittest
 import sys
 import os
-from hw12.hh12 import Bank, Book, Reader
+from hw12.hh12 import Book, Reader
 
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, project_root)
