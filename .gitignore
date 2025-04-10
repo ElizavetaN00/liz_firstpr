@@ -7,6 +7,8 @@ __pycache__/
 *.html
 *.xml
 report/
+# pytest-html assets
+assets/
 <<<<<<< HEAD
 =======
 
