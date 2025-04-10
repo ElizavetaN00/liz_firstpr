@@ -2,11 +2,11 @@ import pytest
 from loguru import logger
 from source.bank import Bank
 
-print("Bank imported:", Bank)
 
 @pytest.fixture
 def bank():
     return Bank()
+
 
 def test_register_client(bank):
     logger.info("Testing positive client registration")
@@ -14,11 +14,14 @@ def test_register_client(bank):
     assert "0000001" in bank.clients
     assert bank.clients["0000001"] == "Elizaveta"
 
+
 def test_register_same_client(bank):
     logger.info("Testing registration with the same client id")
     bank.register_client("0000001", "Elizaveta")
+
     with pytest.raises(ValueError):
         bank.register_client("0000001", "Alvina")
+
 
 def test_open_deposit_account(bank):
     logger.info("Testing positive deposit account opening")
@@ -29,8 +32,10 @@ def test_open_deposit_account(bank):
 
 def test_open_deposit_not_registered_client(bank):
     logger.info("Testing deposit opening for unregistered client")
+
     with pytest.raises(ValueError):
         bank.open_deposit_account("0000001", 1000, 1)
+
 
 def test_open_same_deposit_multiple_times(bank):
     logger.info("Testing opening same deposit for same client")
@@ -42,6 +47,7 @@ def test_open_same_deposit_multiple_times(bank):
 
     assert bank.deposits["0000001"]["start_balance"] == 1000
     assert bank.deposits["0000001"]["years"] == 1
+
 
 def test_calc_deposit_interest_rate(bank):
     logger.info("Testing deposit interest rate calculation")
@@ -62,6 +68,7 @@ def test_calc_interest_no_opened_deposit(bank):
     assert str(e.value) == "No deposit found for this client"
     assert client_id not in bank.deposits
 
+
 def test_close_deposit(bank):
     logger.info("Testing positive deposit closing")
     bank.register_client("0000001", "Elizaveta")
@@ -69,7 +76,9 @@ def test_close_deposit(bank):
     bank.close_deposit("0000001")
     assert "0000001" not in bank.deposits
 
+
 def test_close_deposit_no_client_opened(bank):
     logger.info("Testing closing nonexistent deposit")
+
     with pytest.raises(ValueError):
         bank.close_deposit("0000001")
