@@ -30,6 +30,7 @@ def test_open_deposit_account(bank):
     assert "0000001" in bank.deposits
     assert bank.deposits["0000001"]["start_balance"] == 1000
 
+
 def test_open_deposit_not_registered_client(bank):
     logger.info("Testing deposit opening for unregistered client")
 
