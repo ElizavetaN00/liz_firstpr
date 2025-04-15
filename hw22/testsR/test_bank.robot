@@ -63,6 +63,7 @@ Register New Client
     Create Bank
     Register Client  0000001  Elizaveta
     Client Check Exist  0000001
+    Should Be Equal  ${BANK.clients['0000001']}  Elizaveta
 
 Register Existing Client Fail
     Create Bank
@@ -74,6 +75,10 @@ Open Deposit For Registered Client
     Register Client  0000001  Elizaveta
     Open Deposit  0000001  1000  1
     Deposit Check Exist  0000001
+    ${deposit}=  Evaluate  $BANK.deposits["0000001"]
+    Should Be Equal As Numbers  ${deposit['start_balance']}  1000
+    Should Be Equal As Numbers  ${deposit['years']}  1
+    Should Be Equal As Numbers  ${deposit['current_balance']}  1000
 
 Open Deposit For Unregistered Client Fail
     Create Bank
@@ -103,3 +108,4 @@ Close Deposit Account
     Open Deposit  0000001  1000  1
     Close Deposit  0000001
     Deposit Check Not Exist  0000001
+    Calculate Interest Rate Fail  0000001  No deposit found for this client
