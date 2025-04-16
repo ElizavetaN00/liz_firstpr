@@ -27,8 +27,10 @@ try:
                                                          '"add-to-cart-sauce-labs-backpack"]')
     add_backpack_button.click()
 
-    add_fleece_jacket_button = browser.find_element(By.XPATH, '//button[@data-test='
-                                                              '"add-to-cart-sauce-labs-fleece-jacket"]')
+    add_fleece_jacket_button = browser.find_element(
+        By.XPATH,
+        '//button[@data-test="add-to-cart-sauce-labs-fleece-jacket"]'
+    )
     add_fleece_jacket_button.click()
 
     # Go to Cart
